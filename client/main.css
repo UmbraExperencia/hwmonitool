@@ -1,0 +1,230 @@
+body {
+  margin-top: 50px;
+  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/circles-dark.png");
+  background-repeat: repeat;
+}
+
+.container{
+  background-color:white;
+  margin-top: 80px;
+  padding: 30px; 
+  margin-bottom: 50px;
+
+}
+/* #signup-link { display: none !important; } */
+/* */
+.black{
+  background-color: black !important;
+  color:white;
+}
+
+.black a{
+  color:white;
+}
+
+.black a:hover{
+  color:gainsboro;
+}
+strong{
+  font-weight: bold;
+}
+hr { background-color:white; height: 1px; border: 0; }
+
+.proza-libre{
+  font-family: 'Proza Libre', sans-serif;
+}
+h3 {
+  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
+}
+.pet-background{
+  background-color: black !important;
+  color: aliceblue;
+  padding-bottom: 0 !important; 
+  margin-bottom: 0 !important; 
+}
+
+.background-img{
+  height:40em;
+  text-align: left;
+
+  
+}
+.h4Time{
+  color:#3889F1;
+}
+.h1NoHayDispositivos{
+  color:gray;
+}
+.navbar-toggler {
+  background-color: rgb(66, 66, 66) !important ;
+  border-color: rgb(255, 255, 255) !important;
+} 
+.form-style-8 input[type="text"],
+.form-style-8 input[type="date"],
+.form-style-8 input[type="datetime"],
+.form-style-8 input[type="email"],
+.form-style-8 input[type="search"],
+.form-style-8 input[type="time"],
+.form-style-8 input[type="url"],
+.form-style-8 input[type="password"],
+.form-style-8 input[type="number"],
+.form-style-8 textarea,
+.form-style-8 select 
+{
+	outline: none;
+	padding: 3px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 5px;
+	height: 45px;
+}
+
+.form-style-8 input[type="number"]{
+  width: 50px;
+}
+
+.center-img{
+  display: block;
+  margin: 0 auto;
+}
+
+
+/* cards */
+
+.product-card-description-box {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  
+  flex: 0 0 auto;
+  height: 50%;
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+  background-color: #ecf0f1;
+  
+}
+
+.product-card-name {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  color: #2c3e50;
+  margin-bottom: 0.2cm;
+}
+
+.buy-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ecf0f1;
+  background-color: #1abc9c;
+  border-radius: 0.25rem;
+  transition: 0.25s;
+  margin: 0 auto;
+  margin-bottom: 0.7cm;
+  outline:none;
+}
+.adopt-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #ecf0f1;
+  background-color: #1abc9c;
+  border-radius: 0.25rem;
+  transition: 0.25s;
+  margin: 0 auto;
+  outline:none;
+}
+
+.buy-button:hover {
+  outline:none;
+  
+  background-color:#069478 ;
+  color: #ecf0f1;
+  margin: 0 auto;
+  margin-bottom: 0.7cm;
+  
+}
+
+.product-card {
+  display: flex;
+  flex-flow: column;
+  width: 300px;
+  height: 290px;
+  margin: 20px 0px;
+  -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-card2 {
+  display: flex;
+  flex-flow: column;
+  width: 300px;
+  height: 450px;
+  margin: 20px 0px;
+  -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+}
+.product-card3 {
+  display: flex;
+  flex-flow: column;
+  width: 300px;
+  height: 150px;
+  margin: 20px 0px;
+  -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.product-card img{
+  height: auto;
+  width: 100%;
+}
+
+.card-margin{
+  padding: 30px;
+}
+
+#petopia { 
+  color: white;
+}
+
+#petopia { 
+  color: white;
+}
+#formAddPet textarea{
+  background-color:#eaeaea;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px !important;
+  border-radius: 15px !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  line-height: 1.42857 !important;
+}
+
+.petpic{
+  width: 50%;
+}
+
+#page-numbers {
+  list-style: none;
+  display: flex;
+}
+
+#page-numbers > li {
+  margin-right: 0.3em;
+  color: blue;
+  user-select: none;
+  cursor: pointer;
+}
