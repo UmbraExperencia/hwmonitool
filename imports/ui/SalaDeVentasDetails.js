@@ -67,6 +67,7 @@ class SalaDeVentasDetails extends Component {
                     temperaturaGPU={r.temperaturaGPU}
                     direccionMAC={r.direccionMAC}
                     dispCabeza={r.dispCabeza}
+                    conectado={r.conectado}
                     idDispositivo={r._id}
                     />
                     </div>

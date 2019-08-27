@@ -17,7 +17,7 @@ class EditDispositivoForm extends Component {
         direccionMAC: '',
         dispCabeza: false,
         idSalaDeVentas: localStorage.getItem('idSalaDeVentas'),
-        OGCabeza: false,
+        conectado: false,
         hasSettings: false
     };
     //bind
@@ -54,6 +54,7 @@ class EditDispositivoForm extends Component {
         temperaturaGPU: this.state.temperaturaGPU,
         direccionMAC: this.state.direccionMAC,
         dispCabeza: this.state.dispCabeza,
+        conectado: this.state.conectado,
         idSalaDeVentas: this.state.idSalaDeVentas
       }
       var idDispositivoActual = localStorage.getItem("idDispositivo");
@@ -81,6 +82,7 @@ class EditDispositivoForm extends Component {
         direccionMAC: '',
         idSalaDeVentas: '',
         dispCabeza: false,
+        conectado: false,
       });
 
       this.dialog.show({
@@ -119,11 +121,9 @@ renderForm(){
      this.setState({
        especificaciones: r.especificaciones,
        direccionMAC: r.direccionMAC,
-       dispCabeza: r.dispCabeza
+       dispCabeza: r.dispCabeza,
+       conectado: r.conectado
      })
-     if(r.dispCabeza === true){
-       this.state.OGCabeza = true
-     }
      console.log(this.state.especificaciones)
      console.log(this.state.dispCabeza)
      this.state.hasSettings = true;

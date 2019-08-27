@@ -92,16 +92,24 @@ function handler (req, res) {
   });
 }
 
-io.on('connection', function (socket) {
+io.on('connection',Meteor.bindEnvironment((socket)=> {
+  var maciD;
   console.log("connection attempt...")
   socketVar = socket;
   socketVar.emit('IdentifySocket')
-  socketVar.on('MACIdentification', function (MACIdentification) {
+  socketVar.on('MACIdentification',  Meteor.bindEnvironment((MACIdentification) =>{
     console.log('The client with MAC address ' + MACIdentification + ' has joined the server' );
     dict.setValue(MACIdentification,socketVar);
     dict.getValue(MACIdentification).emit('SocketValidationTest')
-  });
-});
+    Meteor.call('dispositivos.updateConnection',MACIdentification,true)
+    maciD = MACIdentification
+  }));
+  socketVar.on('disconnect', Meteor.bindEnvironment(function() {
+    console.log('The client with MAC address ' + maciD + ' has disconnected')
+    Meteor.call('dispositivos.updateConnection',maciD,false)
+
+  }));  
+}));
 
 
   //METHODS

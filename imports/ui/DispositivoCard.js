@@ -89,6 +89,18 @@ export default class DispositivoCard extends Component {
        </div>
       }
   }
+  renderConectado(conectado){
+    if(conectado){
+    return <div>
+         <h3 className= 'float-center' title="Dispositivo en cabeza">🔵</h3> 
+        </div>
+    }
+    else{
+      return <div>
+      <h3 className= 'float-center' title="Dispositivo en cabeza">🔴</h3> 
+     </div>
+    }
+}
       render() {
         let {
           especificaciones,
@@ -97,6 +109,7 @@ export default class DispositivoCard extends Component {
           temperaturaGPU,
           direccionMAC,
           dispCabeza,
+          conectado,
           idDispositivo
         } = this.props;
         return (
@@ -108,10 +121,6 @@ export default class DispositivoCard extends Component {
             <div className='product-card-name'>
           {especificaciones}
         </div>
-            <p className='text-center'>
-         Estado: {estadoEncendido}
-         
-        </p>
         <p className='text-center'>
         temperatura CPU: {temperaturaCPU}
         </p>
@@ -125,6 +134,10 @@ export default class DispositivoCard extends Component {
               <button className='btn btn btn-danger' onClick={this.apagarButton.bind(this,idDispositivo, direccionMAC)}>Apagar</button>
               <br/><br/>
               <button className='btn' onClick={this.editDispositivoButton.bind(this,idDispositivo)}>Editar</button>
+              <br/><br/>
+              {this.renderConectado(conectado)}
+              
+              
             </div>
             <Dialog ref={(component) => { this.dialog = component }} />
           </div>

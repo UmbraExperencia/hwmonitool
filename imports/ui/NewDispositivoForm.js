@@ -17,6 +17,7 @@ class NewDispositivoForm extends Component {
         temperaturaGPU: '',
         direccionMAC: '',
         dispCabeza: false,
+        conectado: false,
         idSalaDeVentas: localStorage.getItem('idSalaDeVentas'),
     };
     //bind
@@ -54,6 +55,7 @@ class NewDispositivoForm extends Component {
         temperaturaGPU: this.state.temperaturaGPU,
         direccionMAC: this.state.direccionMAC,
         dispCabeza: this.state.dispCabeza,
+        conectado: this.state.conectado,
         idSalaDeVentas: this.state.idSalaDeVentas,  
       }
     /** 
@@ -80,6 +82,7 @@ class NewDispositivoForm extends Component {
         direccionMAC: '',
         idSalaDeVentas: '',
         dispCabeza: false,
+        conectado: false,
       });
 
       this.dialog.show({

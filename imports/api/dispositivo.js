@@ -41,5 +41,12 @@ Meteor.methods({
     },  
     'dispositivos.deleteBySalaDeVentas':function(pIdSalaDeVentas){
         return Dispositivo.remove({idSalaDeVentas: pIdSalaDeVentas});
+    },
+    'dispositivos.updateConnection':function(direccionMACDisp, connection ){
+        Dispositivo.update({ direccionMAC: direccionMACDisp },{
+            $set: {
+                conectado: connection,
+                }
+        });
     }
 });
