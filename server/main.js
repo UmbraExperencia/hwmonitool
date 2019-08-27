@@ -18,7 +18,7 @@ var socketVar = null
 var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
-app.listen(80);
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, err => {
     if(err) throw err;
