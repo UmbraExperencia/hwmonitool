@@ -8,10 +8,6 @@ import {SalaDeVenta} from "../imports/api/salaDeVenta.js";
 import { Dispositivo } from "../imports/api/dispositivo.js";
 
 Meteor.startup(() => {
-  io.configure(function () { 
-    io.set("transports", ["xhr-polling"]); 
-    io.set("polling duration", 10); 
-  });
 // @ts-nocheck
 var Collections = require('typescript-collections');
 var dictScheduling =  new Collections.MultiDictionary(); //HAY QUE GUARDAR LOS J ACA
@@ -23,7 +19,10 @@ var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
 app.listen(80);
-
+io.configure(function () { 
+  io.set("transports", ["xhr-polling"]); 
+  io.set("polling duration", 10); 
+});
 //SCHEDULING <------------------------
 var schedule = require('node-schedule');
 
