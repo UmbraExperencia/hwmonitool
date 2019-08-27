@@ -18,7 +18,10 @@ var socketVar = null
 var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
-app.listen(8080)
+var port = 8080
+app.listen(port, function() {
+  console.log('Our app is running on http://localhost:' + port);
+});
 //SCHEDULING <------------------------
 var schedule = require('node-schedule');
 
