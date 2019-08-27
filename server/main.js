@@ -18,12 +18,7 @@ var socketVar = null
 var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
-
-const PORT = process.env.PORT || 8081;
-app.listen(PORT, err => {
-    if(err) throw err;
-    console.log("%c Server running", "color: green");
-});
+app.listen(8080)
 //SCHEDULING <------------------------
 var schedule = require('node-schedule');
 
