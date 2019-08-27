@@ -19,7 +19,7 @@ var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, err => {
     if(err) throw err;
     console.log("%c Server running", "color: green");
