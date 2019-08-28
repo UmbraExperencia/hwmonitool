@@ -21,7 +21,7 @@ var fs = require('fs');
 var portToListen = 8080
 var server = app.listen({
   host: 'localhost',
-  port: 8080,
+  port: 3000,
 }, function(data) {
   console.log('------CALLBACKS DATA: ' , data)
   var host = server.address().address;
