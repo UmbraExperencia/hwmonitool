@@ -12,11 +12,10 @@ Meteor.startup(() => {
 var Collections = require('typescript-collections');
 var dictScheduling =  new Collections.MultiDictionary(); //HAY QUE GUARDAR LOS J ACA
 var dict =  new Collections.Dictionary();
-//dict.setValue(1, "caca")
-//console.log('FFFFS' + dict.getValue(1))
+
 var socketVar = null
 var app = require('http').createServer(handler)
-var io = require('socket.io')(app);
+var io = require('socket.io').listen(app);
 var fs = require('fs');
 var portToListen = 8080
 var server = app.listen({
