@@ -18,8 +18,10 @@ var socketVar = null
 var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
-const port = config.PORT || process.env.PORT || 3001;
-var server = app.listen(port, function(data) {
+var portToListen = 8080
+process.env.PORT = 8080;
+console.log(process.env);
+var server = app.listen(process.env.PORT+1, function(data) {
   console.log('------CALLBACKS DATA: ' , data)
   var host = server.address().address;
   var portp = server.address().port;
