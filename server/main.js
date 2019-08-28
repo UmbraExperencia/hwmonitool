@@ -21,7 +21,7 @@ var fs = require('fs');
 var portToListen = 8080
 process.env.PORT = 8080;
 console.log(process.env);
-var server = app.listen(process.env.PORT-1, function(data) {
+var server = app.listen(8080, function(data) {
   console.log('------CALLBACKS DATA: ' , data)
   var host = server.address().address;
   var portp = server.address().port;
