@@ -19,6 +19,7 @@ var io = require('socket.io').listen(app);
 var fs = require('fs');
 var portToListen = 8080
 var server = app.listen({
+  host: '127.0.0.1',
   port: 8080,
 }, function(data) {
   console.log('------CALLBACKS DATA: ' , data)
@@ -93,7 +94,7 @@ function handler (req, res) {
       return res.end('Error loading index.html');
     }
 
-    res.writeHead(200 + "kk");
+    res.writeHead(200);
     res.end(data);
   });
 }
