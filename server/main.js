@@ -16,7 +16,7 @@ var dict =  new Collections.Dictionary();
 //console.log('FFFFS' + dict.getValue(1))
 var socketVar = null
 var app = require('http').createServer(handler)
-var io = require('socket.io').listen(app);
+var io = require('socket.io')(app);
 var fs = require('fs');
 var portToListen = 8080
 var server = app.listen({
