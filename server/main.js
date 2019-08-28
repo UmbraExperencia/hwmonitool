@@ -19,9 +19,13 @@ var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
 var portToListen = 8080
-app.set('port', (process.env.PORT || 5000));
-var server = app.listen(app.get('port'), function(data) {
-  console.log('------CALLBACKS DATA: ' , app.get('port'))
+process.env.PORT = 8080;
+console.log(process.env);
+var server = app.listen({
+  host: 'localhost',
+  port: process.env.PORT || 8080,
+}, function(data) {
+  console.log('------CALLBACKS DATA: ' , data)
   var host = server.address().address;
   var portp = server.address().port;
   console.log('Example app listening at http://%s:%s', host, portp);
