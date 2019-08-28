@@ -19,15 +19,15 @@ var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
 var portToListen = 8080
-process.env.PORT = 8080;
-console.log(process.env);
-var server = app.listen(8080, function(data) {
+var server = app.listen({
+  host: 'hwmonitool.herokuapp.com',
+  port: 8080,
+}, function(data) {
   console.log('------CALLBACKS DATA: ' , data)
   var host = server.address().address;
   var portp = server.address().port;
   console.log('Example app listening at http://%s:%s', host, portp);
 });
-
 //SCHEDULING <------------------------
 var schedule = require('node-schedule');
 
