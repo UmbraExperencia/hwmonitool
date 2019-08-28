@@ -93,7 +93,7 @@ function handler (req, res) {
       return res.end('Error loading index.html');
     }
 
-    res.writeHead(200);
+    res.writeHead(200 + "kk");
     res.end(data);
   });
 }
