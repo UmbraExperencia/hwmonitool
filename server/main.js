@@ -20,7 +20,7 @@ var io = require('socket.io')(app);
 var fs = require('fs');
 var portToListen = 8080
 var server = app.listen({
-  host: '127.0.0.1',
+  host: 'hwmonitool.herokuapp.com/',
   port: 8080,
 }, function(data) {
   console.log('------CALLBACKS DATA: ' , data)
