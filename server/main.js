@@ -19,11 +19,10 @@ var app = require('http').createServer(handler)
 var io = require('socket.io')(app);
 var fs = require('fs');
 var portToListen = 3000
-process.env.PORT = 39352;
 console.log(process.env);
 var server = app.listen({
   host: 'localhost',
-  port: process.env.PORT || 39352,
+  port: process.env.PORT,
 }, function(data) {
   console.log('------CALLBACKS DATA: ' , data)
   var host = server.address().address;
