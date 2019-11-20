@@ -7,7 +7,7 @@ import "../imports/api/empresa.js"
 import {SalaDeVenta} from "../imports/api/salaDeVenta.js";
 import { Dispositivo } from "../imports/api/dispositivo.js";
 
-const PORT = parseInt(process.env.PORT) || 8888;
+const PORT =  8888;
 /*
 const PORT = parseInt(process.env.SOCKET_PORT) || 3003;
 // Client-side config
