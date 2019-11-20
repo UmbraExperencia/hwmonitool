@@ -8,7 +8,7 @@ import {SalaDeVenta} from "../imports/api/salaDeVenta.js";
 import { Dispositivo } from "../imports/api/dispositivo.js";
 
 //const PORT = parseInt(process.env.SOCKET_PORT) || 3003;
-const PORT = 8080;
+const PORT = parseInt(process.env.SOCKET_PORT) || 3003;
 // Client-side config
 WebAppInternals.addStaticJs(`
   window.socketPort = ${PORT};
