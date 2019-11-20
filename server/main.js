@@ -24,9 +24,9 @@ var dict =  new Collections.Dictionary();
 
 var socketVar = null
 var app = require('http').createServer(handler)
-var io = require('socket.io').listen(app);
+var io = require('socket.io')(app);
 var fs = require('fs');
-var portToListen = 8080
+//var portToListen = 8080
 /*
 var server = app.listen({
   host: '0.0.0.0',
@@ -39,11 +39,7 @@ var server = app.listen({
 });*/
 //let port = process.env.PORT || 8888ss
 //var server = app.listen(port);
- try {
-  app.listen(PORT);
-} catch (e) {
-  console.error(e);
-}
+var server = app.listen(process.env.PORT || '3005');
 //SCHEDULING <------------------------
 var schedule = require('node-schedule');
 
