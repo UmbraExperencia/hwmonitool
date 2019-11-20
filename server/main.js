@@ -29,7 +29,7 @@ var server = app.listen({
   console.log('Example app listening at http://%s:%s', host, portp);
 });*/
 //let port = process.env.PORT || 8888
-let port = 8080
+const port = window.socketPort || 8080;
 var server = app.listen(port);
 //SCHEDULING <------------------------
 var schedule = require('node-schedule');
