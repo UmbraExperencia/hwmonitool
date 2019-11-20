@@ -7,6 +7,14 @@ import "../imports/api/empresa.js"
 import {SalaDeVenta} from "../imports/api/salaDeVenta.js";
 import { Dispositivo } from "../imports/api/dispositivo.js";
 
+//const PORT = parseInt(process.env.SOCKET_PORT) || 3003;
+const PORT = 8080;
+// Client-side config
+WebAppInternals.addStaticJs(`
+  window.socketPort = ${PORT};
+`);
+
+
 Meteor.startup(() => {
 // @ts-nocheck
 var Collections = require('typescript-collections');
@@ -28,9 +36,13 @@ var server = app.listen({
   var portp = server.address().port;
   console.log('Example app listening at http://%s:%s', host, portp);
 });*/
-//let port = process.env.PORT || 8888
-const port = window.socketPort || 8080;
-var server = app.listen(port);
+//let port = process.env.PORT || 8888ss
+//var server = app.listen(port);
+ try {
+  app.listen(PORT);
+} catch (e) {
+  console.error(e);
+}
 //SCHEDULING <------------------------
 var schedule = require('node-schedule');
 
