@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-
+import { WebApp } from 'meteor/webapp';
+import socketIO from 'socket.io';
 import "../imports/api/salaDeVenta.js"
 import "../imports/api/dispositivo.js"
 import "../imports/api/empresa.js"
@@ -21,10 +22,10 @@ Meteor.startup(() => {
 var Collections = require('typescript-collections');
 var dictScheduling =  new Collections.MultiDictionary(); //HAY QUE GUARDAR LOS J ACA
 var dict =  new Collections.Dictionary();
-
+const io = socketIO(WebApp.httpServer);
 var socketVar = null
 var app = require('http').createServer(handler)
-var io = require('socket.io')(app);
+//var io = require('socket.io')(app);
 var fs = require('fs');
 //var portToListen = 8080
 /*
@@ -39,7 +40,7 @@ var server = app.listen({
 });*/
 //let port = process.env.PORT || 8888ss
 //var server = app.listen(port);
-var server = app.listen(process.env.PORT || '3005');
+//var server = app.listen(process.env.PORT || '3005');
 //SCHEDULING <------------------------
 var schedule = require('node-schedule');
 
