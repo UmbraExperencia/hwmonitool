@@ -44,6 +44,12 @@ var server = app.listen({
 //SCHEDULING <------------------------
 var schedule = require('node-schedule');
 
+var http = require("http");
+setInterval(function() {
+    http.get('http://hwmonitool.herokuapp.com');
+}, 300000); 
+
+
 var salasDeVenta = SalaDeVenta.find({}).fetch()
 //console.log(salasDeVenta)
 salasDeVenta.map((salaDeVenta,salaDeVentai)=>{
