@@ -65,7 +65,7 @@ salasDeVenta.map((salaDeVenta,salaDeVentai)=>{
             try{
               dict.getValue(dispEnCabeza.direccionMAC).emit('wakePCByMAC',dispActual.direccionMAC) 
             }
-            catch{
+            catch(error){
 
             }
            });
@@ -84,8 +84,8 @@ dispositivosPorSalaDeVenta.map((dispActual,dispActuali)=>{
      //EXCUTE SLEEP PROTOCOL
      try{
      dict.getValue(dispActual.direccionMAC).emit('sleepPCByMAC')}
-     catch{
-       
+     catch(error){
+
      }
     });
   j2.disp = dispActual.especificaciones;
@@ -192,7 +192,7 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
                try{
                 dict.getValue(dispEnCabeza.direccionMAC).emit('wakePCByMAC',dispActual.direccionMAC) 
                 }
-                catch{
+                catch(error){
                   
                 }
              });
@@ -212,7 +212,7 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
        try{
        dict.getValue(dispActual.direccionMAC).emit('sleepPCByMAC')
         }
-        catch{
+        catch(error){
 
         }
       });
