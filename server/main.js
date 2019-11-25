@@ -62,7 +62,12 @@ salasDeVenta.map((salaDeVenta,salaDeVentai)=>{
            //console.log("DONDE")
            dispositivosPorSalaDeVenta.map((dispActual,dispActuali)=>{
             //console.log(dispEnCabeza.especificaciones + dispEnCabeza.direccionMAC)
+            try{
               dict.getValue(dispEnCabeza.direccionMAC).emit('wakePCByMAC',dispActual.direccionMAC) 
+            }
+            catch{
+
+            }
            });
 
           });
@@ -77,7 +82,11 @@ dispositivosPorSalaDeVenta.map((dispActual,dispActuali)=>{
   var res = salaDeVenta.turnOffHour.split(":") // PUEDE QUE FALLE AL NO HABER HECHO TRIM DEL 0
   var j2 = schedule.scheduleJob({hour: res[0], minute: res[1]}, function(){
      //EXCUTE SLEEP PROTOCOL
-     dict.getValue(dispActual.direccionMAC).emit('sleepPCByMAC')
+     try{
+     dict.getValue(dispActual.direccionMAC).emit('sleepPCByMAC')}
+     catch{
+       
+     }
     });
   j2.disp = dispActual.especificaciones;
   dictScheduling.setValue(salaDeVenta._id,j2)
@@ -128,7 +137,7 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
   socketVar.on('disconnect', Meteor.bindEnvironment(function() {
     console.log('The client with MAC address ' + maciD + ' has disconnected')
     Meteor.call('dispositivos.updateConnection',maciD,false)
-
+    dict.remove(maciD);
   }));  
 }));
 
@@ -180,7 +189,12 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
              //EXCUTE WAKE ON LAN PROTOCOL
              var dispositivosALevantar = dispositivosPorSalaDeVenta
              dispositivosPorSalaDeVenta.map((dispActual,dispActuali)=>{
+               try{
                 dict.getValue(dispEnCabeza.direccionMAC).emit('wakePCByMAC',dispActual.direccionMAC) 
+                }
+                catch{
+                  
+                }
              });
   
             });
@@ -195,7 +209,12 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
     var res = salaDeVenta.turnOffHour.split(":") // PUEDE QUE FALLE AL NO HABER HECHO TRIM DEL 0
     var j2 = schedule.scheduleJob({hour: res[0], minute: res[1]}, function(){
        //EXCUTE SLEEP PROTOCOL
+       try{
        dict.getValue(dispActual.direccionMAC).emit('sleepPCByMAC')
+        }
+        catch{
+
+        }
       });
       j2.disp = dispActual.especificaciones;
     dictScheduling.setValue(salaDeVenta._id,j2)
