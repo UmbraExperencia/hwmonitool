@@ -72,7 +72,7 @@ salasDeVenta.map((salaDeVenta,salaDeVentai)=>{
               dict.getValue(dispEnCabeza.direccionMAC).emit('wakePCByMAC',dispActual.direccionMAC) 
             }
             catch(error){
-
+              console.log(error)
             }
            });
 
@@ -91,7 +91,7 @@ dispositivosPorSalaDeVenta.map((dispActual,dispActuali)=>{
      try{
      dict.getValue(dispActual.direccionMAC).emit('sleepPCByMAC')}
      catch(error){
-
+      console.log(error)
      }
     });
   j2.disp = dispActual.especificaciones;
@@ -163,16 +163,23 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
     },
 
     'socket.sendWakeMessageToMAC':function(pconMac){
-   
+      try{
       var res = pconMac.split("-")
       console.log("DIR MAC CABEZA "+ res[0])
       console.log("DIR MAC TO "+ res[1])
-      dict.getValue(res[0]).emit('wakePCByMAC',res[1])
+      dict.getValue(res[0]).emit('wakePCByMAC',res[1])}
+      catch(error){
+        console.log(error)
+      }
       //socketVar.emit('wakePCByMAC', DirecconMAC);
   },
 
   'socket.sendSleepMessageToMAC':function(DirecconMAC){
-    dict.getValue(DirecconMAC).emit('sleepPCByMAC')
+    try{
+    dict.getValue(DirecconMAC).emit('sleepPCByMAC')}
+    catch(error){
+     console.log(error)
+    }
     //socketVar.emit('sleepPCByMAC', DirecconMAC);
 },
 
@@ -199,7 +206,7 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
                 dict.getValue(dispEnCabeza.direccionMAC).emit('wakePCByMAC',dispActual.direccionMAC) 
                 }
                 catch(error){
-                  
+                  console.log(error)
                 }
              });
   
@@ -219,7 +226,7 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
        dict.getValue(dispActual.direccionMAC).emit('sleepPCByMAC')
         }
         catch(error){
-
+          console.log(error)
         }
       });
       j2.disp = dispActual.especificaciones;
