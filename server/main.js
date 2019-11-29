@@ -144,7 +144,11 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
     console.log('The client with MAC address ' + maciD + ' has disconnected')
     Meteor.call('dispositivos.updateConnection',maciD,false)
     dict.remove(maciD);
-  }));  
+  })); 
+  socketVar.on('MACTemperatura', Meteor.bindEnvironment((MACTemperatura) =>{
+    var res = MACTemperatura.split("-")
+    Meteor.call('dispositivos.updateTemperatureCPU',res[0],res[1])
+  })); 
 }));
 
 

@@ -48,5 +48,12 @@ Meteor.methods({
                 conectado: connection,
                 }
         });
+    },
+    'dispositivos.updateTemperatureCPU':function(direccionMACDisp, temperature ){
+        Dispositivo.update({ direccionMAC: direccionMACDisp },{
+            $set: {
+                temperaturaCPU: temperature,
+                }
+        });
     }
 });
