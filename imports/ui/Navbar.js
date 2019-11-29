@@ -10,9 +10,10 @@ class Navbar extends Component {
   render() {
     if(this.props.user){
         return(
-          <nav className="navbar navbar-expand-lg fixed-top black" >
+          <nav className="navbar navbar-expand-lg fixed-top navbar-light">
               <a className="navbar-brand" href="/">
-              <strong>HWMoniTool</strong>
+              <img src="https://i.imgur.com/Nphggtz.jpg"  className="app-title"/>
+              
               </a>
               <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
@@ -24,7 +25,7 @@ class Navbar extends Component {
                     <a className="nav-item nav-link" href="/newSalaVenta">Registrar sala de ventas</a>
                     <a className="nav-item nav-link" href="/empresas">Clientes</a>
                     <a className="nav-item nav-link" href="/newEmpresa">Registrar cliente</a>
-                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                     <AccountsUIWrapper/> 
               </div>
               </div>
@@ -33,9 +34,9 @@ class Navbar extends Component {
     }
     else{
       return(
-          <nav className="navbar navbar-expand-lg fixed-top black" >
+          <nav className="navbar navbar-expand-lg fixed-top navbar-light" >
             <a className="navbar-brand" href="/">
-               <strong>HWMoniTool</strong>
+               <strong className="app-title">HWMoniTool</strong>
              </a>
              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                  <span className="navbar-toggler-icon"></span>

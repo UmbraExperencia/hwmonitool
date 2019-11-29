@@ -76,16 +76,24 @@ return(){
   render() {
     return (
         <div className="container">
-          <button className=' btn btn btn-danger' onClick={this.return}>Volver</button>
+        <div className="buttonLeft">
+                 <button className='btn' onClick={this.return}>← VOLVER</button>
+                 </div>
         <br/>
        <br/>
        <form onSubmit={this.handleSubmit}>
-           <h1>Registrar nuevo cliente</h1>
+       
+           <h1 align="center">REGISTRAR NUEVO CLIENTE</h1>
            <div className="form-group">
                <label>Nombre</label>
                <input className="form-control" type="text" name ="name" id="name"  value={this.state.name} onChange={this.handleChange} required/>
            </div>
-               <button type="submit" className="btn btn-success">Submit</button> 
+              <div className="buttonRight">
+               <button type="submit" className="btn">SUBMIT →</button> 
+               </div>
+               <div align="center">
+               <img src="https://i.imgur.com/fNgxwl9.jpg"/>
+               </div>
                <Dialog ref={(component) => { this.dialog = component }} />
              
        </form> 

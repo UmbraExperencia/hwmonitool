@@ -144,7 +144,7 @@ class ViewEmpresas extends Component {
     return (
        
     <div className="container">
-                <h1 className= 'text-center'>Clientes</h1> 
+                <h1 className= 'text-center'>CLIENTES</h1> 
         <div className="row" align="center">
         {this.renderselect()}
 
@@ -157,7 +157,9 @@ class ViewEmpresas extends Component {
               }
          </ul> 
           </div>
-         
+          <div align="center">
+               <img src="https://i.imgur.com/fNgxwl9.jpg"/>
+               </div>
     </div>
       
     )

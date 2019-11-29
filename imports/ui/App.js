@@ -8,7 +8,7 @@ export default class App extends React.Component {
                 <Navbar/>
                 <div className="content">
                 {this.props.children}
-                </div>     
+                </div>    
             </div>
         );
     }

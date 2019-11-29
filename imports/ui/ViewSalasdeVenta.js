@@ -165,7 +165,7 @@ class ViewSalasdeVenta extends Component {
     return (
        
     <div className="container">
-                <h1 className= 'text-center'>Salas de venta</h1> 
+                <h1 className= 'text-center'>SALAS DE VENTA</h1> 
                 <div className="form-check">
                 <h3>Filtrar por cliente</h3>
                 <select id="empresaFilter" className="custom-select " name="empresaFilter"  value={this.state.empresaFilter} onChange={this.handleChange} >
@@ -185,7 +185,9 @@ class ViewSalasdeVenta extends Component {
               }
          </ul> 
           </div>
-         
+          <div align="center">
+               <img src="https://i.imgur.com/fNgxwl9.jpg"/>
+               </div>
     </div>
       
     )

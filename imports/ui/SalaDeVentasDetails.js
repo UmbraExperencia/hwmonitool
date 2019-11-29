@@ -197,7 +197,7 @@ class SalaDeVentasDetails extends Component {
     return (
        
     <div className="container">
-            <button className=' btn btn btn-danger' onClick={this.return}>Volver</button>
+            <button className='btn' onClick={this.return}>← VOLVER</button>
          <h1 className= 'text-center'>{localStorage.getItem('nameSalaDeVentas')}</h1> 
          <br/>
                 <h2 className= 'text-left'>Dispositivos de la sala de ventas</h2> 
@@ -224,8 +224,11 @@ class SalaDeVentasDetails extends Component {
           <hr></hr> 
           <h5 className= 'text-left'>Nota: Debe existir UN dispositivo en cabeza 👑</h5> 
           <hr></hr> 
-          <button className=' btn buy-button' onClick={this.editSaladeEventoButton.bind(this,localStorage.getItem('idSalaDeVentas'))}>Editar Información</button> &emsp;&emsp;&emsp;
-          <button className=' btn buy-button' onClick={this.newDispositivoButton.bind(this,localStorage.getItem('idSalaDeVentas'))}>Registrar Dispositivo</button>
+          <button className=' btn buy-button' onClick={this.editSaladeEventoButton.bind(this,localStorage.getItem('idSalaDeVentas'))}>Editar Información →</button> &emsp;&emsp;&emsp;
+          <button className=' btn buy-button' onClick={this.newDispositivoButton.bind(this,localStorage.getItem('idSalaDeVentas'))}>Registrar Dispositivo →</button>
+          <div align="center">
+               <img src="https://i.imgur.com/fNgxwl9.jpg"/>
+               </div>
     </div>
     
     )

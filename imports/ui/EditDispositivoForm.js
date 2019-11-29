@@ -148,11 +148,11 @@ renderForm(){
     else if (this.state.hasSettings){
     return (
         <div className="container">
-          <button className=' btn btn btn-danger' onClick={this.return}>Volver</button>
+          <button className=' btn' onClick={this.return}>← VOLVER</button>
         <br/>
        <br/>
        <form onSubmit={this.handleSubmit}>
-           <h1>Editar dispositivo</h1>
+           <h1 align="center">EDITAR DISPOSITIVO</h1>
            <div className="form-group">
                <label>Especificaciones</label>
                <input className="form-control" type="text" name ="especificaciones" id="especificaciones"  value={this.state.especificaciones} onChange={this.handleChange} required/>
@@ -167,10 +167,13 @@ renderForm(){
            <input className="form-check-input" type="checkbox"  id="dispCabeza" name = "dispCabeza"  value={this.state.dispCabeza} onChange={this.handleChange} checked={this.state.dispCabeza}/>
                 <label className="form-check-label" >Dispositivo en cabeza</label>
             </div>
-          
-               <button type="submit" className="btn btn-success">Submit</button> 
+            <div className="buttonRight">
+               <button type="submit" className="btn">SUBMIT →</button> 
+               </div>
                <Dialog ref={(component) => { this.dialog = component }} />
-             
+               <div align="center">
+               <img src="https://i.imgur.com/fNgxwl9.jpg"/>
+               </div>
        </form> 
                      
    </div>

@@ -103,19 +103,23 @@ renderForm(){
     else if (this.state.hasSettings){
     return (
         <div className="container">
-          <button className=' btn btn btn-danger' onClick={this.return}>Volver</button>
+          <button className=' btn' onClick={this.return}>← VOLVER</button>
         <br/>
        <br/>
        <form onSubmit={this.handleSubmit}>
-           <h1>Editar empresa</h1>
+           <h1 align="center">EDITAR CLIENTE</h1>
            <div className="form-group">
                <label>Nombre</label>
                <input className="form-control" type="text" name ="name" id="name"  value={this.state.name} onChange={this.handleChange} required/>
            </div>
         
-           
+           <div className="buttonRight">
           
-               <button type="submit" className="btn btn-success">Submit</button> 
+               <button type="submit" className="btn">SUBMIT →</button> 
+               </div>
+               <div align="center">
+               <img src="https://i.imgur.com/fNgxwl9.jpg"/>
+               </div>
                <Dialog ref={(component) => { this.dialog = component }} />
              
        </form> 

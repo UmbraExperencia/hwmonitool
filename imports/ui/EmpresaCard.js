@@ -43,11 +43,11 @@ export default class EmpresaCard extends Component {
           
           <div className='product-card3 text-center'>
           <div className='card-margin'>
-          <button className='btn btn btn-circle btn-danger float-right' title="Eliminar empresa" onClick={this.deleteEmpresaButton.bind(this,idEmpresa)}>X</button>
+          <button className='btn btn btn-circle float-right' title="Eliminar empresa" onClick={this.deleteEmpresaButton.bind(this,idEmpresa)}>X</button>
             <div className='product-card-name'>
           {name}
         </div>
-              <button className='btn' onClick={this.editEmpresaButton.bind(this,idEmpresa)}>Editar</button>
+              <button className='btn btn-editar' onClick={this.editEmpresaButton.bind(this,idEmpresa)}>EDITAR →</button>
             </div>
           </div>
         );

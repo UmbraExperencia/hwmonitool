@@ -117,9 +117,11 @@ export default class DispositivoCard extends Component {
           <div className='product-card2 text-center'>
           <div className='card-margin'>
           {this.renderDispCabeza(dispCabeza)}
-          <button className='btn btn btn-circle btn-danger float-right' title="Eliminar dispositivo" onClick={this.deleteDispositivoButton.bind(this,idDispositivo)}>X</button>
+          <button className='btn btn btn-circle  float-right' title="Eliminar dispositivo" onClick={this.deleteDispositivoButton.bind(this,idDispositivo)}>X</button>
             <div className='product-card-name'>
+              
           {especificaciones}
+          <hr></hr>
         </div>
         <p className='text-center'>
         temperatura CPU: {temperaturaCPU}
@@ -130,10 +132,10 @@ export default class DispositivoCard extends Component {
         <p className='text-center'>
         direccion MAC: {direccionMAC}
         </p>
-              <button className='btn btn-success' onClick={this.encenderButton.bind(this,idDispositivo, direccionMAC)}>Encender</button> &emsp;
-              <button className='btn btn btn-danger' onClick={this.apagarButton.bind(this,idDispositivo, direccionMAC)}>Apagar</button>
+              <button className='btn btn-success' onClick={this.encenderButton.bind(this,idDispositivo, direccionMAC)}>ENCENDER</button> &emsp;
+              <button className='btn btn btn-danger' onClick={this.apagarButton.bind(this,idDispositivo, direccionMAC)}>APAGAR</button>
               <br/><br/>
-              <button className='btn' onClick={this.editDispositivoButton.bind(this,idDispositivo)}>Editar</button>
+              <button className='btn' onClick={this.editDispositivoButton.bind(this,idDispositivo)}>EDITAR →</button>
               <br/><br/>
               {this.renderConectado(conectado)}
               

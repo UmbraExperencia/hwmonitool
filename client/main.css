@@ -2,13 +2,14 @@ body {
   margin-top: 50px;
   font-family: sans-serif;
   font-family: 'Open Sans', sans-serif;
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/circles-dark.png");
+  background-image: url("https://i.imgur.com/qj39xnn.jpg");
   background-repeat: repeat;
+  background-size: 2200px 1124px
 }
 
 .container{
   background-color:white;
-  margin-top: 80px;
+  margin-top: 100px;
   padding: 30px; 
   margin-bottom: 50px;
 
@@ -35,10 +36,7 @@ hr { background-color:white; height: 1px; border: 0; }
 .proza-libre{
   font-family: 'Proza Libre', sans-serif;
 }
-h3 {
-  font-family: sans-serif;
-  font-family: 'Open Sans', sans-serif;
-}
+
 .pet-background{
   background-color: black !important;
   color: aliceblue;
@@ -58,10 +56,36 @@ h3 {
 .h1NoHayDispositivos{
   color:gray;
 }
+.nav-item{
+  font-size: 13px !important;
+  margin-left: 45px;
+  margin-top: 17px;
+  margin-bottom: 17px;
+  font-family: 'Montserrat Light' !important;
+} 
+.login-link-text{
+  font-size: 14px;
+  font-family: 'Montserrat Light';
+} 
+.app-title{
+  width: 150px;
+  height: 59px;
+  margin-left: 25px;
+} 
+.logoUmbra{
+  width: 150px;
+  height: 41px;
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
+.poweredBy{
+  margin-top: 20px;
+}
 .navbar-toggler {
-  background-color: rgb(66, 66, 66) !important ;
+
   border-color: rgb(255, 255, 255) !important;
 } 
+
 .form-style-8 input[type="text"],
 .form-style-8 input[type="date"],
 .form-style-8 input[type="datetime"],
@@ -155,12 +179,13 @@ h3 {
   display: flex;
   flex-flow: column;
   width: 300px;
-  height: 290px;
+  height: 350px;
   margin: 20px 0px;
   -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
 	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
 	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 
 .product-card2 {
   display: flex;
@@ -187,9 +212,13 @@ h3 {
   height: auto;
   width: 100%;
 }
-
+.product-card-name{
+  font-family: 'Montserrat Light' !important;
+  color:#7a7a7a !important;
+  margin-top: 40px !important;
+}
 .card-margin{
-  padding: 30px;
+  padding: 0px;
 }
 
 #petopia { 
@@ -227,4 +256,115 @@ h3 {
   color: blue;
   user-select: none;
   cursor: pointer;
+}
+
+.navbar {
+  background:white;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 3px;
+}
+h1{
+  font-family: 'Montserrat Light' !important;
+  font-size: 25px !important;
+  color:#7a7a7a !important;
+  margin-bottom: 100px;
+}
+h2{
+  font-family: 'Montserrat Light' !important;
+  font-size: 20px !important;
+  color:#7a7a7a !important;
+}
+h3 {
+  font-family: 'Montserrat Light' !important;
+  font-size: 18px !important;
+  color:#7a7a7a !important;
+}
+h5 {
+  font-family: 'Montserrat Light' !important;
+  font-size: 16px !important;
+  color:#7a7a7a !important;
+}
+.h4Time{
+  color:	#EE0D75 !important;
+  font-size: 14px !important;
+}
+.buttonRight{
+  text-align: right;
+}
+.buttonLeft{
+  text-align: left;
+}
+label{
+  font-family: 'Montserrat Light' !important;
+  color:#7a7a7a !important;
+  margin-bottom: 20px;
+}
+.btn{
+  font-family: 'Montserrat Light' !important;
+  color:#7a7a7a !important;
+  background-color: white;
+}
+input{
+  font-family: 'Montserrat Light' !important;
+  color:#7a7a7a !important;
+}
+select{
+  font-family: 'Montserrat Light' !important;
+  color:#7a7a7a !important;
+  margin-bottom: 5px !important;
+}
+.form-control{
+  margin-bottom: 5px !important;
+}
+.product-card-name{
+  
+  margin-top: 20px;
+}
+.btn-editar{
+  font-size: 12px;
+  margin-top: 20px;
+}
+li{
+  color:#7a7a7a !important;
+  font-family: 'Montserrat Light' !important;
+}
+
+.btn-sm{
+  font-family: 'Montserrat Light' !important;
+  color:#7a7a7a !important;
+  background-color: white !important;
+  border-color: white !important;
+}
+
+p{
+  color:#7a7a7a !important;
+  font-family: 'Montserrat Light' !important;
+}
+
+h4{
+  color:#7a7a7a !important;
+  font-family: 'Montserrat Light' !important;
+}
+.modal-title{
+  color:#7a7a7a !important;
+  font-family: 'Montserrat Light' !important;
+}
+.buttonSalaDeVenta{
+  margin-top: 60px;
+}
+.btn-success{
+  color:white !important;
+}
+.btn-danger{
+  color:white !important;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: #7a7a7a;
+  text-align: center;
 }

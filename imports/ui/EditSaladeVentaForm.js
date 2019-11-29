@@ -192,10 +192,10 @@ class EditSaladeVentaForm extends Component {
     else if (this.state.hasSettings){
       return(
         <div className="container">
-       <button className=' btn btn btn-danger' onClick={this.return}>Volver</button>
+       <button className=' btn' onClick={this.return}>← VOLVER</button>
        <br/> <br/>
        <form onSubmit={this.handleSubmit}>
-           <h1>Editar sala de ventas</h1>
+           <h1 align="center">EDITAR SALA DE VENTAS</h1>
            <div className="form-group">
                <label>Nombre</label>
                <input className="form-control" type="text" name ="name" id="name"  value={this.state.name} onChange={this.handleChange} required/>
@@ -224,13 +224,16 @@ class EditSaladeVentaForm extends Component {
                 <input className="form-control" type="time" name="turnOffHour" id="turnOffHour" value={this.state.turnOffHour} onChange={this.handleChange}></input>  
             </div>
                <br/>
-               <button type="submit" className="btn btn-success">Submit</button> 
+               <button type="submit" className="btn">SUBMIT →</button> 
                <Dialog ref={(component) => { this.dialog = component }} />
-               <br/><br/>
+               
           
        </form> 
        <div align="right">
-               <button type="submit" className="btn btn btn-danger" onClick={this.deleteDispositivoButton.bind(this)}>Eliminar sala de Ventas</button> 
+               <button type="submit" className="btn" onClick={this.deleteDispositivoButton.bind(this)}>x ELIMINAR SALA DE VENTAS</button> 
+               <div align="center">
+               <img src="https://i.imgur.com/fNgxwl9.jpg"/>
+               </div>
            </div>             
    </div>
       )

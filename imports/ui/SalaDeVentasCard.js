@@ -37,6 +37,7 @@ export default class SalaDeVentasCard extends Component {
           <div className='card-margin'>
             <div className='product-card-name'>
           {name}
+          <hr></hr> 
         </div>
             <p className='text-center'>
          Ciudad: {city}
@@ -45,8 +46,10 @@ export default class SalaDeVentasCard extends Component {
         <p className='text-center'>
         Cliente: {company}
         </p>
-              <button className=' btn buy-button' onClick={this.detailsSaladeEventoButton.bind(this,idSaladeVentas, name,turnOnHour,turnOffHour)}>Ver estado</button>
-              <button className=' btn buy-button' onClick={this.editSaladeEventoButton.bind(this,idSaladeVentas)}>Editar Información</button>
+              <div className='buttonSalaDeVenta'>
+              <button className=' btn' onClick={this.detailsSaladeEventoButton.bind(this,idSaladeVentas, name,turnOnHour,turnOffHour)}>VER ESTADO →</button>
+              </div>
+              <button className=' btn' onClick={this.editSaladeEventoButton.bind(this,idSaladeVentas)}>EDITAR INFORMACIÓN →</button>
             </div>
           </div>
         );

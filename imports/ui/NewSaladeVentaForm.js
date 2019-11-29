@@ -138,11 +138,11 @@ return(){
     else if(this.state.hasEmpresas){
     return (
         <div className="container">
-          <button className=' btn btn btn-danger' onClick={this.return}>Volver</button>
+          <button className=' btn' onClick={this.return}>← VOLVER</button>
         <br/>
        <br/>
        <form onSubmit={this.handleSubmit}>
-           <h1>Registrar nueva sala de ventas</h1>
+           <h1 align="center">REGISTRAR NUEVA SALA DE VENTAS</h1>
            <div className="form-group">
                <label>Nombre</label>
                <input className="form-control" type="text" name ="name" id="name"  value={this.state.name} onChange={this.handleChange} required/>
@@ -172,7 +172,12 @@ return(){
             </div>
             
            <div className="wrapper container">
-               <button type="submit" className="btn btn-success">Submit</button> 
+           <div className="buttonRight">
+               <button type="submit" className="btn">SUBMIT →</button> 
+               </div>
+               <div align="center">
+               <img src="https://i.imgur.com/fNgxwl9.jpg"/>
+               </div>
                <Dialog ref={(component) => { this.dialog = component }} />
            </div>     
        </form> 
