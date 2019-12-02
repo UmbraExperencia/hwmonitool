@@ -65,10 +65,10 @@ export default class DispositivoCard extends Component {
 
   infoCPUTemperature(id,pDireccionMAC,conectado, estadoEncendido){
     if(conectado){
-      var info = estadoEncendido.replace(/[^\x00-\x7F]/g,"°").trim();
+      var info = estadoEncendido.replace(/[^\x00-\x7F]/g,"°")
 
       this.dialog.show({
-        title: 'Detalles de la temperatura',
+        title: 'Detalles',
         body: <pre>  {info} </pre>,
         actions: [
           Dialog.OKAction(() => {
@@ -173,13 +173,14 @@ export default class DispositivoCard extends Component {
           <div className='card-margin'>
           {this.renderDispCabeza(dispCabeza)}
           <button className='btn btn btn-circle  float-right' title="Eliminar dispositivo" onClick={this.deleteDispositivoButton.bind(this,idDispositivo)}>X</button>
+          <button className='btn btn btn-circle  float-left' title="Detalles" onClick={this.infoCPUTemperature.bind(this,idDispositivo, direccionMAC, conectado, estadoEncendido)}>ⓘ</button>
             <div className='product-card-name'>
               
           {especificaciones}
           <hr></hr>
         </div>
         <button className='btn btn btn-circle  float-right' title="Refrescar temperatura" onClick={this.refreshCPUTemperature.bind(this,idDispositivo, direccionMAC, conectado)}>↻</button>
-        <button className='btn btn btn-circle  float-right' title="Detalles temperatura" onClick={this.infoCPUTemperature.bind(this,idDispositivo, direccionMAC, conectado, estadoEncendido)}>ⓘ</button>
+        
         <p className='text-center'>
         temperatura CPU: {temperaturaCPU} °C
         </p>
