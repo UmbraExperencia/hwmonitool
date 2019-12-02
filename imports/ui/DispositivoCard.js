@@ -65,11 +65,11 @@ export default class DispositivoCard extends Component {
 
   infoCPUTemperature(id,pDireccionMAC,conectado, estadoEncendido){
     if(conectado){
-      var info = estadoEncendido.replace("\r","").replace("\n","<br />")
+      var info = estadoEncendido.replace("\r","").replace("�","°")
 
       this.dialog.show({
         title: 'Detalles de la temperatura',
-        body: info,
+        body: estadoEncendido,
         actions: [
           Dialog.OKAction(() => {
           })
