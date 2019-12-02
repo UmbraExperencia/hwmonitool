@@ -69,7 +69,7 @@ export default class DispositivoCard extends Component {
 
       this.dialog.show({
         title: 'Detalles de la temperatura',
-        body: info,
+        body: "<pre>" + info + "</pre>",
         actions: [
           Dialog.OKAction(() => {
           })
