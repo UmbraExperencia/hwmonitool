@@ -156,6 +156,19 @@ export default class DispositivoCard extends Component {
      </div>
     }
 }
+
+renderBotonEncendido(dispCabeza , idDispositivo, direccionMAC){
+  if(dispCabeza){
+    return <div>
+         
+        </div>
+    }
+    else{
+      return <div> 
+          <button className='btn btn-success'  align="center" onClick={this.encenderButton.bind(this,idDispositivo, direccionMAC)}>ENCENDER</button> &emsp;
+     </div>
+    }
+}
       render() {
         let {
           especificaciones,
@@ -190,8 +203,9 @@ export default class DispositivoCard extends Component {
         <p className='text-center'>
         direccion MAC: {direccionMAC}
         </p>
-              <button className='btn btn-success' onClick={this.encenderButton.bind(this,idDispositivo, direccionMAC)}>ENCENDER</button> &emsp;
-              <button className='btn btn btn-danger' onClick={this.apagarButton.bind(this,idDispositivo, direccionMAC)}>APAGAR</button>
+        {this.renderBotonEncendido(dispCabeza, idDispositivo,direccionMAC)}
+            <br/>
+              <button className='btn btn btn-danger'  align="center" onClick={this.apagarButton.bind(this,idDispositivo, direccionMAC)}>APAGAR</button>
               <br/><br/>
               <button className='btn' onClick={this.editDispositivoButton.bind(this,idDispositivo)}>EDITAR →</button>
               <br/><br/>
