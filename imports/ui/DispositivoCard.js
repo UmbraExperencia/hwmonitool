@@ -177,7 +177,7 @@ export default class DispositivoCard extends Component {
           <hr></hr>
         </div>
         <button className='btn btn btn-circle  float-right' title="Refrescar temperatura" onClick={this.refreshCPUTemperature.bind(this,idDispositivo, direccionMAC, conectado)}>↻</button>
-        <button className='btn btn btn-circle  float-right' title="Refrescar temperatura" onClick={this.infoCPUTemperature.bind(this,idDispositivo, direccionMAC, conectado, estadoEncendido)}>ⓘ</button>
+        <button className='btn btn btn-circle  float-right' title="Detalles temperatura" onClick={this.infoCPUTemperature.bind(this,idDispositivo, direccionMAC, conectado, estadoEncendido)}>ⓘ</button>
         <p className='text-center'>
         temperatura CPU: {temperaturaCPU} °C
         </p>
