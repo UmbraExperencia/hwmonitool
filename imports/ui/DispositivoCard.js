@@ -76,7 +76,7 @@ export default class DispositivoCard extends Component {
          }
 
       var info = estadoEncendido.replace(/[^\x00-\x7F]/g,"°")
-      var finalInfo = replace(info,"  ",10)
+      var finalInfo = insert(info,"  ",10)
       this.dialog.show({
         title: 'Detalles',
         body: <pre>  {finalInfo} </pre>,
