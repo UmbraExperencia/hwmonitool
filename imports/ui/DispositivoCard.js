@@ -67,7 +67,7 @@ export default class DispositivoCard extends Component {
     if(conectado){
       this.dialog.show({
         title: 'Detalles de la temperatura',
-        body: estadoEncendido,
+        body: {estadoEncendido},
         actions: [
           Dialog.OKAction(() => {
           })
