@@ -147,7 +147,7 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
   })); 
   socketVar.on('MACTemperatura', Meteor.bindEnvironment((MACTemperatura) =>{
     var res = MACTemperatura.split("-")
-    Meteor.call('dispositivos.updateTemperatureCPU',res[0],res[1])
+    Meteor.call('dispositivos.updateTemperatureCPU',res[0],res[1],res[2])
   })); 
 }));
 
