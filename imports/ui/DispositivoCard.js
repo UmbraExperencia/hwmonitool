@@ -42,21 +42,9 @@ export default class DispositivoCard extends Component {
       Meteor.call('socket.sendSleepMessageToMAC', pDireccionMAC);
     
   }
-  refreshCPUTemperature(id,pDireccionMAC,conectado, estadoEncendido){
+  refreshCPUTemperature(id,pDireccionMAC,conectado){
     if(conectado){
-      this.dialog.show({
-        title: 'Detalles de temperatura',
-        body: estadoEncendido,
-        actions: [
-          Dialog.OKAction(() => {
-          })
-        ],
-        bsSize: 'small',
-        onHide: (dialog) => {
-          dialog.hide()
-          
-        }
-      })
+      Meteor.call('socket.refreshTemperatureOfMAC', pDireccionMAC);
     }
     else{
       this.dialog.show({
@@ -75,9 +63,21 @@ export default class DispositivoCard extends Component {
     }
   }
 
-  infoCPUTemperature(id,pDireccionMAC,conectado){
+  infoCPUTemperature(id,pDireccionMAC,conectado, estadoEncendido){
     if(conectado){
-      Meteor.call('socket.refreshTemperatureOfMAC', pDireccionMAC);
+      this.dialog.show({
+        title: 'Detalles de la temperatura',
+        body: estadoEncendido,
+        actions: [
+          Dialog.OKAction(() => {
+          })
+        ],
+        bsSize: 'small',
+        onHide: (dialog) => {
+          dialog.hide()
+          
+        }
+      })
     }
     else{
       this.dialog.show({
