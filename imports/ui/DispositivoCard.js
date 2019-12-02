@@ -42,6 +42,26 @@ export default class DispositivoCard extends Component {
       Meteor.call('socket.sendSleepMessageToMAC', pDireccionMAC);
     
   }
+  refreshCPUTemperature(id,pDireccionMAC,conectado){
+    if(conectado){
+      Meteor.call('socket.refreshTemperatureOfMAC', pDireccionMAC);
+    }
+    else{
+      this.dialog.show({
+        title: 'No es posible completar la operación',
+        body: "El cliente no esta conectado a la aplicación",
+        actions: [
+          Dialog.OKAction(() => {
+          })
+        ],
+        bsSize: 'small',
+        onHide: (dialog) => {
+          dialog.hide()
+          
+        }
+      })
+    }
+  }
   editDispositivoButton(id){
         
     window.location.assign("/editDispositivo")
@@ -123,8 +143,9 @@ export default class DispositivoCard extends Component {
           {especificaciones}
           <hr></hr>
         </div>
+        <button className='btn btn btn-circle  float-right' title="Refrescar temperatura" onClick={this.refreshCPUTemperature.bind(this,idDispositivo, direccionMAC, conectado)}>↻</button>
         <p className='text-center'>
-        temperatura CPU: {temperaturaCPU}
+        temperatura CPU: {temperaturaCPU} °C
         </p>
         <p className='text-center'>
         temperatura GPU: {temperaturaGPU}

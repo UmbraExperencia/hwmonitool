@@ -187,6 +187,15 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
     //socketVar.emit('sleepPCByMAC', DirecconMAC);
 },
 
+'socket.refreshTemperatureOfMAC':function(DirecconMAC){
+  try{
+  dict.getValue(DirecconMAC).emit('SocketUpdateTemperature')}
+  catch(error){
+   console.log(error)
+  }
+},
+
+
 'schedule.updateEncendidoYApagadoBySalaDeVentas':function(idSalaDeVentas){
   console.log("-------RESCHEDULING-----------------");
   dictScheduling.getValue(idSalaDeVentas).forEach(cancelSchedules);
