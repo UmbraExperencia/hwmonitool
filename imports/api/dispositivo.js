@@ -57,11 +57,10 @@ Meteor.methods({
                 }
         });
     },
-    'dispositivos.updateTemperatureGPU':function(direccionMACDisp, temperature , details){
+    'dispositivos.updateTemperatureGPU':function(direccionMACDisp, temperature){
         Dispositivo.update({ direccionMAC: direccionMACDisp },{
             $set: {
                 temperaturaGPU: temperature,
-                estadoEncendido: details,
                 }
         });
     }

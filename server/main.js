@@ -151,7 +151,7 @@ io.on('connection',Meteor.bindEnvironment((socket)=> {
   })); 
   socketVar.on('MACTemperaturaGPU', Meteor.bindEnvironment((MACTemperatura) =>{
     var res = MACTemperatura.split("-")
-    Meteor.call('dispositivos.updateTemperatureGPU',res[0],res[1],res[2])
+    Meteor.call('dispositivos.updateTemperatureGPU',res[0],res[1])
   })); 
 }));
 
