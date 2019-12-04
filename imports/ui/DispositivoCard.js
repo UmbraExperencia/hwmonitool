@@ -198,7 +198,7 @@ renderBotonEncendido(dispCabeza , idDispositivo, direccionMAC){
         temperatura CPU: {temperaturaCPU} °C
         </p>
         <p className='text-center'>
-        temperatura GPU: {temperaturaGPU}
+        temperatura GPU: {temperaturaGPU} °C
         </p>
         <p className='text-center'>
         direccion MAC: {direccionMAC}
