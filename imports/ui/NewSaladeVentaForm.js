@@ -18,7 +18,8 @@ class NewSaladeVentaForm extends Component {
         turnOnHour: '',
         turnOffHour:'',
         idDispEnCabeza:'',
-        hasEmpresas: false
+        hasEmpresas: false,
+        TemperaturaSalaDeVenta:''
     };
 
     //bind
@@ -52,7 +53,8 @@ class NewSaladeVentaForm extends Component {
         company: this.state.company,
         turnOnHour: this.state.turnOnHour,
         turnOffHour: this.state.turnOffHour,
-        idDispEnCabeza: this.state.idDispEnCabeza
+        idDispEnCabeza: this.state.idDispEnCabeza,
+        TemperaturaSalaDeVenta: this.state.TemperaturaSalaDeVenta
       }
     
       Meteor.call('salaDeVenta.add', salaDeVenta);
