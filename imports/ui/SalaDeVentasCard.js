@@ -7,13 +7,15 @@ export default class SalaDeVentasCard extends Component {
         super(props);
     }
 
-    detailsSaladeEventoButton(id,name, turnOnHour,turnOffHour){
+    detailsSaladeEventoButton(id,name, turnOnHour,turnOffHour, TemperaturaSalaDeVenta, city){
         
         window.location.assign("/salaDeVentasDetails")
         localStorage.setItem('idSalaDeVentas', id);
         localStorage.setItem('nameSalaDeVentas', name);
         localStorage.setItem('turnOnHour',turnOnHour)
         localStorage.setItem('turnOffHour',turnOffHour)
+        localStorage.setItem('TemperaturaSalaDeVenta', TemperaturaSalaDeVenta)
+        localStorage.setItem('city', city)
     }
     editSaladeEventoButton(id){
         
@@ -28,7 +30,8 @@ export default class SalaDeVentasCard extends Component {
           company,
           turnOnHour,
           turnOffHour,
-          idSaladeVentas
+          idSaladeVentas,
+          TemperaturaSalaDeVenta
         } = this.props;
     
         return (
@@ -47,7 +50,7 @@ export default class SalaDeVentasCard extends Component {
         Cliente: {company}
         </p>
               <div className='buttonSalaDeVenta'>
-              <button className=' btn' onClick={this.detailsSaladeEventoButton.bind(this,idSaladeVentas, name,turnOnHour,turnOffHour)}>VER ESTADO →</button>
+              <button className=' btn' onClick={this.detailsSaladeEventoButton.bind(this,idSaladeVentas, name,turnOnHour,turnOffHour,TemperaturaSalaDeVenta, city)}>VER ESTADO →</button>
               </div>
               <button className=' btn' onClick={this.editSaladeEventoButton.bind(this,idSaladeVentas)}>EDITAR INFORMACIÓN →</button>
             </div>

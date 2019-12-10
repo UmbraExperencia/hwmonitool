@@ -4,8 +4,7 @@ import {withTracker} from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import InfiniteScroll from 'react-infinite-scroller';
-
-
+import "../api/salaDeVenta.js"
 import {SalaDeVenta} from '../api/salaDeVenta.js';
 import { Dispositivo } from '../api/dispositivo.js';
 
@@ -22,7 +21,20 @@ class SalaDeVentasDetails extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.updateTemperaturaSalaDeVenta = this.updateTemperaturaSalaDeVenta.bind(this)
     }
+
+    updateTemperaturaSalaDeVenta(){
+      console.log("updating temperature . . .")
+      var salaDeVenta = SalaDeVenta.find({_id: localStorage.getItem("idSalaDeVentas")}).fetch();
+      salaDeVenta.map((salaVenta,salaVentai)=>{
+        var temperatura = salaVenta.TemperaturaSalaDeVenta;
+        var city = salaVenta.city;
+        console.log(city + temperatura);
+        document.getElementById('idTemperaturaSalaVenta').innerText = city +  ": " + temperatura+ " °C"
+      })
+    }
+
     newDispositivoButton(id){
         
         window.location.assign("/NewDispositivo")
@@ -49,6 +61,7 @@ class SalaDeVentasDetails extends Component {
         });
     }
 
+    
     componentDidMount(){
         
     }
@@ -193,6 +206,18 @@ class SalaDeVentasDetails extends Component {
     return turnOffHour;
 }
 
+getTemperaturaSalaDeVenta(){
+  let temperaturaSalaDeVenta = '';
+  if(localStorage.getItem('TemperaturaSalaDeVenta')){
+    temperaturaSalaDeVenta = localStorage.getItem('city') +  ": " + localStorage.getItem('TemperaturaSalaDeVenta')+ " °C"
+  }
+  else {
+    temperaturaSalaDeVenta = 'No se ha actualizado la temperatura, haga click en el botón de actualizar o espere una hora y vuelvalo a intentar'
+  }
+
+  return temperaturaSalaDeVenta;
+}
+
   render() {
     return (
        
@@ -221,6 +246,10 @@ class SalaDeVentasDetails extends Component {
           <br/>
           <h3 className= 'text-left'>Hora de apagado </h3> <h4 className="h4Time">{this.getTurnOffHour()}</h4>
           <br/>
+          <hr></hr> 
+          <h2 className= 'text-left'>Temperatura de la sala de ventas</h2> 
+          <button className='btn btn btn-circle  float-left' title="Refrescar temperatura" onClick={this.updateTemperaturaSalaDeVenta.bind()}>↻</button>
+          <h3 className= 'text-left' id="idTemperaturaSalaVenta">{this.getTemperaturaSalaDeVenta()}</h3>
           <hr></hr> 
           <h5 className= 'text-left'>Nota: Debe existir UN dispositivo en cabeza 👑</h5> 
           <hr></hr> 

@@ -44,7 +44,16 @@ Meteor.methods({
                 }
         });
     },
-        
+
+    'salaDeVenta.updateTemperatureSalaDeVenta':function(pCiudad,pTemperatura){
+        SalaDeVenta.update({ city: pCiudad },{
+            $set: {
+                TemperaturaSalaDeVenta: pTemperatura
+                }
+        },{
+            multi: true
+        });
+    },
         'salaDeVenta.delete':function(idSaladeVentaToRemove){
             return SalaDeVenta.remove({_id: idSaladeVentaToRemove});
         }  

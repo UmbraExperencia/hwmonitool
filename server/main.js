@@ -15,8 +15,6 @@ const PORT = parseInt(process.env.SOCKET_PORT) || 3003;
 WebAppInternals.addStaticJs(`
   window.socketPort = ${PORT};
 `);*/
-
-
 Meteor.startup(() => {
 // @ts-nocheck
 var Collections = require('typescript-collections');
@@ -27,6 +25,7 @@ var socketVar = null
 var app = require('http').createServer(handler)
 //var io = require('socket.io')(app);
 var fs = require('fs');
+var Request = require("request");
 //var portToListen = 8080
 /*
 var server = app.listen({
@@ -48,6 +47,75 @@ var http = require("http");
 setInterval(function() {
     http.get('http://hwmonitool.herokuapp.com');
 }, 300000); 
+
+
+
+
+//TEMPERATURA SALA DE VENTAS *****************************************************************************************************************************************
+
+//REQUEST INICIAL
+var salasDeVentaParaTemperatura = SalaDeVenta.find({}).fetch()
+var i = 0;
+var array = new Array(salasDeVentaParaTemperatura.length)
+salasDeVentaParaTemperatura.map((salaDeVenta,salaDeVentai)=>{
+  array[i] = salaDeVenta.city;
+  i++;      
+});
+function onlyUnique(value, index, self) { 
+  return self.indexOf(value) === index;
+}
+var unique = array.filter( onlyUnique );
+unique.forEach(element => { 
+  var cityName = element.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+  Request.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName},co&units=metric&APPID=f7b1da7ccdeff2f191668ddceab8aa6b`, Meteor.bindEnvironment((error, response, body) => {
+    if(error) {
+        return console.dir(error);
+    }
+    let weather = JSON.parse(body);
+    try{
+    let message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+    console.log(cityName);
+    Meteor.call('salaDeVenta.updateTemperatureSalaDeVenta',element,weather.main.temp)} //donde ciudad sea igual a element, actualizar temp
+    catch(error){
+      console.log(error);
+    }
+}));
+});
+
+//REQUEST CADA 2 HORAS
+setInterval(async function() {
+  var salasDeVentaParaTemperatura = SalaDeVenta.find({}).fetch()
+var i = 0;
+var array = new Array(salasDeVentaParaTemperatura.length)
+salasDeVentaParaTemperatura.map((salaDeVenta,salaDeVentai)=>{
+  array[i] = salaDeVenta.city;
+  i++;      
+});
+function onlyUnique(value, index, self) { 
+  return self.indexOf(value) === index;
+}
+var unique = array.filter( onlyUnique );
+unique.forEach(element => { 
+  var cityName = element.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+  Request.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityName},co&units=metric&APPID=f7b1da7ccdeff2f191668ddceab8aa6b`, Meteor.bindEnvironment((error, response, body) => {
+    if(error) {
+        return console.dir(error);
+    }
+    let weather = JSON.parse(body);
+    try{
+    let message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+    console.log(cityName);
+    Meteor.call('salaDeVenta.updateTemperatureSalaDeVenta',element,weather.main.temp)} //donde ciudad sea igual a element, actualizar temp
+    catch(error){
+      console.log(error);
+    }
+}));
+});
+}, 3600000); //7200000 <- 2 horas
+
+//**************************************************************************************************************************************************************************
+
+
 
 
 var salasDeVenta = SalaDeVenta.find({}).fetch()

@@ -60,6 +60,7 @@ class ViewSalasdeVenta extends Component {
                     turnOnHour = {r.turnOnHour}
                     turnOffHour = {r.turnOffHour}
                     idSaladeVentas={r._id}
+                    TemperaturaSalaDeVenta={r.TemperaturaSalaDeVenta}
                     />
                     </div>
                 ); 
